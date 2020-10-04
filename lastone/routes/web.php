@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\productcontroller;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ use App\Http\Controllers\productcontroller;
 })->name('home'); 
 Route::get('/shop', [productcontroller::class, 'index'])->name('product.index');
 Route::get('/homepage/{product}', [productcontroller::class, 'show'])->name('product.show');
+Route::get('/search',[SearchController::class, 'search'])->name('searchy');
 Route::get('/{brand}', [productcontroller::class, 'showbrand'])->name('product.brand');
 
 

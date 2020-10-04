@@ -1,4 +1,10 @@
 <!doctype html>
+@extends('layouts.search')
+
+@section('title', 'Page Title')
+
+<body>
+@section('content')
 
 @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -26,6 +32,11 @@
             <div class="product-price">{{$product->price}}</div>
             <div class="product-saleprice">{{$product->sale_price}}</div>
             
-            </div>
+     </div>
         @endforeach
-    </div>
+        </div>
+        @endsection 
+       
+   
+    </body>
+    </html>
