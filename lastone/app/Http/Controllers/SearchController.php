@@ -37,7 +37,7 @@ class SearchController extends Controller
             ->get();
            dd($joined); 
            
-           return view('product')->with(compact('joined')); 
+         //  return view('product')->with(compact('joined')); 
 
 }
 }
