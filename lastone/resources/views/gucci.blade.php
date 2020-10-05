@@ -29,7 +29,19 @@
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('product.index')}}">Shop</a></li>
             <li><a href="">Promotion</a></li>
-            <li><a href="sinup.html">SignUp</a></li>
+            <li>@if (Route::has('login'))
+                <div>
+                    @auth
+                         <a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 underline">profile</a>
+                    @else
+                   <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+
+                        @if (Route::has('register'))
+                       <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                        @endif
+                    @endif
+                </div>
+            @endif</li>
             </ol>
         <!--end novbar-->
             <div class="icon">
@@ -44,13 +56,12 @@
                 <!--filter-->
                 <div class="small-container">
                     <div class="row row-2">
-                    <select>
-                       <option> t-shirts</option>
-                        <option> shirts</option>
-                        <option> jeans</option>
-                        <option> jackets</option>
-                        
-                        </select>
+                    <ol>
+                       <li><a href="{{route('product.getfilter','1')}}">clothes</li>
+                        <li><a href="{{route('product.getfilter','2')}}"> shoes</li>
+                        <li><a href="{{route('product.getfilter','3')}}"> bags</li>
+                        <li><a href="{{route('product.getfilter','4')}}"> accessories</li>
+                        </ol>
                     
                     
                     
@@ -63,7 +74,7 @@
                    
 
                     <div class="small-container">
-                       <h2 class="title">Products</h2>
+                       <h2>Egypt Hut</h2>
                             <div class="row">
                             @foreach ($products as $product)
                                 <div class="col-4">

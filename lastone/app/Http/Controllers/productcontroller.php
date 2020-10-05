@@ -22,4 +22,9 @@ class productcontroller extends Controller
          $products= product::where('brand_id',$brand->id)->get();
         return view('gucci')->with('products',$products); 
     }
+    function getfilter($id)
+    {  
+        $products = product::where('category_id', $id)->get();
+        return view('gucci')->with('products',$products);
+    }
 }
